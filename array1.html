@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered" id="tbl">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Email</th>
+                    <th>Room</th>
+                    <th>Office hrs</th>
+                    <th>Ph</th>
+                    <th>Title</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <div id="arraydemo1"> </div>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+
+        // var items = [
+
+        //     { type: "fruit", name: "orange", color: "red" },
+        //     { type: "fruit", name: "apple", color: "red" },
+        //     { type: "vegetable", name: "celery", color: "green" }
+        // ];
+        // var tbl_row = "";
+        // for (var i = 0; i < items.length; i++) {
+        //     var this_item = items[i];
+        //     tbl_row += "<tr>";
+        //     tbl_row += "<td>" + this_item.type + "</td>";
+        //     tbl_row += "<td>" + this_item.name + "</td>";
+        //     tbl_row += "<td>" + this_item.color + "</td>";
+        //     tbl_row += "</tr>";
+
+
+
+        // }
+        // document.getElementById("arraydemo1").innerHTML = tbl_row;
+
+
+
+
+        // var tbl_row2 = "";
+        // for (var i = 0; i < items.length; i++) {
+
+        //     tbl_row2 += "<tr>";
+        //     tbl_row2 += "<td>" + items[i].type + "</td>";
+        //     tbl_row2 += "<td>" + items[i].name + "</td>";
+        //     tbl_row2 += "<td>" + items[i].color + "</td>";
+        //     tbl_row2 += "</tr>";
+
+        //     document.getElementById("arraydemo1").innerHTML = tbl_row2;
+
+        // }
+
+        // var tbl_row2 = "";
+        // for (var i = 0; i < items.length; i++) {
+
+        //     tbl_row3 += `<tr>
+        //      <td> ${items[i].type} </td>
+        //      <td>${ items[i].name} </td>
+        //      <td>${ items[i].color} </td>
+        //      </tr>`;
+
+        //     document.getElementById("arraydemo1").innerHTML = tbl_row2;
+
+        // }
+
+        // array2
+
+        var fac = [
+            {
+                name: "Yannaung Shein",
+                email: "yan@gmail.com",
+                room: "",
+                office_hours: "Mon/Wed 5:000pm - 9:00pm",
+                phone: "",
+                title: "Adjuncr Lecturer"
+            }
+        ]
+
+        var faculty_row = "";
+
+        for (var i = 0; i < fac.length; i++) {
+            faculty_row += `
+                <tr>
+                    <td> ${fac[i].name} </td>
+                    <td> ${fac[i].email} </td>
+                    <td> ${fac[i].room} </td>
+                    <td> ${fac[i].office_hours} </td>
+                    <td> ${fac[i].phone} </td>
+                    <td> ${fac[i].title} </td>
+
+
+                </tr>`
+
+
+        }
+        document.getElementById("arraydemo1").innerHTML = faculty_row;
+    </script>
+</body>
+
+</html>
