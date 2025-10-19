@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Table</title>
+</head>
+<body>
+  <div class="container">
+    <table class="table table-bordered" id="tbl">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Room</th>
+          <th>Office Hours</th>
+          <th>Phone</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody id="arraydemo1"></tbody>
+    </table>
+  </div>
+
+  <script>
+    var fac = [
+      {
+        name: "Yannaung Shein",
+        email: "yan@gmail.com",
+        room: "",
+        office_hours: "Mon/Wed 5:00pm - 9:00pm",
+        phone: "",
+        title: "Adjunct Lecturer"
+      }
+    ];
+
+    var faculty_row = "";
+
+    for (var i = 0; i < fac.length; i++) {
+      faculty_row += `
+        <tr>
+          <td>${fac[i].name}</td>
+          <td>${fac[i].email}</td>
+          <td>${fac[i].room}</td>
+          <td>${fac[i].office_hours}</td>
+          <td>${fac[i].phone}</td>
+          <td>${fac[i].title}</td>
+        </tr>`;
+    }
+
+    document.getElementById("arraydemo1").innerHTML = faculty_row;
+  </script>
+</body>
+</html>
