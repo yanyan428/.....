@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="received"></p>
+
+
+
+    <script>
+        fetch('https://prof-naranjo.com/385/receive_json.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: 'John Doe',
+                email: 'john.doe@company.com'
+            }),
+        })
+            //.then(response => response.json())
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:' + data);
+                document.getElementById("received").innerHTML =
+                    data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+
+</html>

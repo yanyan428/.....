@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- html code -->
+    <table  border="1">
+        <caption>NYC FDNY Firehouse Listing</caption>
+        <thead>
+            <tr>
+                <th>Facility Name</th>
+                <th>Facility Address</th>
+                <th>Borough</th>
+                <th>Postcode</th>
+                <th>Community Board</th>
+                <th>Community Council</th>
+                <th>NTA</th>
+            </tr>
+        </thead>
+        <tbody id="firehouse_listing"></tbody>
+    </table>
+
+
+
+
+    <script>
+
+        
+        fetch('https://data.cityofnewyork.us/resource/hc8x-tcnd.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('API Response:', data);
+                var table_row = "";
+                for (var i = 0; i < data.length; i++) {
+                    table_row += `<tr>
+                <td>${data[i].facilityname}</td>    
+                <td>${data[i].facilityaddress}</td>    
+                <td>${data[i].borough}</td>    
+                <td>${data[i].postcode}</td>    
+                <td>${data[i].community_board}</td>    
+                <td>${data[i].community_council}</td>    
+                <td>${data[i].nta}</td>    
+            </tr>`;
+                }
+                document.getElementById("firehouse_listing").innerHTML =
+                    table_row;
+            })
+
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+
+    </script>
+
+</body>
+
+</html>
